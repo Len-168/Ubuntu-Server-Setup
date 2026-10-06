@@ -61,5 +61,20 @@ It will look similar to:
 ```text
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... yourpc
 ```
-Copy everything including `ssh-ed25519`.
 
+
+On Ubuntu: 
+```bash
+mkdir -p ~/.ssh
+nano ~/.ssh/authorized_keys
+```
+
+Paste the public key.
+
+Then save and exit. (Ctrl + O, Enter, Ctrl + X)
+
+Then fix permissions:
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
