@@ -1,4 +1,4 @@
-# 1 - Generate an SSH key on your local computer
+# 1. Generate an SSH key on your local computer
 On Windows PowerShell, Linux, or macOS:
 ```bash
 ssh-keygen -t ed25519
@@ -26,19 +26,25 @@ You will have two files:
 ~/.ssh/id_ed25519.pub
 ```
 
-# 2 - Copy the SSH public key to Server
+# 2. Copy the SSH public key to Server
 
-If your local machine is Linux/macOS:
+## Method 1
+
+1. If your local machine is Linux/macOS:
 ```bash
 ssh-copy-id dev@[IP_ADDRESS]
 ```
 Then enter the Ubuntu password one final time.
 
 
-On Windows, `ssh-copy-id` often isn't installed. You can run:
+2. On Windows, `ssh-copy-id` often isn't installed. You can run:
 ```bash
 type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh dev@[IP_ADDRESS] "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 Enter your Ubuntu password.
 
-Verify ssh-copy-id:
+**Optional: Test ssh-copy-id:**
+```bash
+ssh dev@[IP_ADDRESS]
+```
+You should now login without password.
