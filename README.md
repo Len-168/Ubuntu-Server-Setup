@@ -26,9 +26,9 @@ You will have two files:
 ~/.ssh/id_ed25519.pub
 ```
 
-# 2. Copy the SSH public key to Server
+# 2. Copy the SSH public key to Server (Two methods)
 
-## Method 1 : The Automated One-Liner
+## Method 1: The Automated One-Liner
 
 **1. If your local machine is Linux/macOS:**
 ```bash
@@ -91,3 +91,73 @@ ssh dev@[IP_ADDRESS]
 You should now log in without entering the Ubuntu account password.
 
 # 4. Disable SSH password login
+
+Only do this after key authentication works successfully.
+
+On Ubuntu:
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+Find or add:
+
+```text
+PubkeyAuthentication yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PermitRootLogin no
+```
+
+Do not disable:
+```text
+UsePAM yes
+```
+
+Save and exit (`Ctrl + O, Enter, Ctrl + X`). Then restart SSH:
+
+# 5. Validate the SSH configuration
+
+Before restarting SSH:
+
+```bash
+sudo sshd -t
+```
+
+If it returns nothing, the configuration is valid.
+
+Then restart SSH:
+
+```bash
+sudo systemctl restart ssh
+```
+
+Check ssh status:
+
+```bash
+sudo systemctl status ssh
+```
+
+# 6. Test again before closing your current SSH session
+Keep your existing SSH terminal open.
+
+**1. Open a second terminal and run:**
+
+```bash
+ssh dev@[IP_ADDRESS]
+```
+
+Should log in without password.
+
+**2. Then explicitly test password authentication:**
+```bash
+ssh -o PubkeyAuthentication=no dev@[IP_ADDRESS]
+```
+
+You should get something similar to:
+
+```text
+Permission denied (publickey).
+```
+
+That means password SSH is disabled correctly.
