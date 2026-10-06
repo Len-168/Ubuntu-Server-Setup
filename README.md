@@ -71,10 +71,23 @@ nano ~/.ssh/authorized_keys
 
 Paste the public key.
 
-Then save and exit. (Ctrl + O, Enter, Ctrl + X)
+Then save and exit. (`Ctrl + O, Enter, Ctrl + X`)
 
 Then fix permissions:
 ```bash
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 ```
+
+# 3. Test key authentication
+Do not disable passwords yet.
+
+Open a new terminal on your local computer:
+
+```bash
+ssh dev@[IP_ADDRESS]
+```
+
+You should now log in without entering the Ubuntu account password.
+
+# 4. Disable SSH password login
