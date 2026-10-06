@@ -30,7 +30,7 @@ You will have two files:
 
 ## Method 1
 
-1. If your local machine is Linux/macOS:
+**1. If your local machine is Linux/macOS:**
 ```bash
 ssh-copy-id dev@[IP_ADDRESS]
 ```
