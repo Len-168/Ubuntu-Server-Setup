@@ -37,11 +37,29 @@ ssh-copy-id dev@[IP_ADDRESS]
 Then enter the Ubuntu password one final time.
 
 
-2. On Windows, `ssh-copy-id` often isn't installed. You can run:
-```bash
+**2. On Windows, `ssh-copy-id` often isn't installed. You can run:**
+```powershell
 type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh dev@[IP_ADDRESS] "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 Enter your Ubuntu password.
 
 
-## Method 2 : The Manual Way
+## Method 2: The Manual Copy-Paste
+
+**1. Local machine (Linux/macOS):**
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+**2. Local machine (Windows):**
+```powershell
+type $env:USERPROFILE\.ssh\id_ed25519.pub
+```
+
+It will look similar to:
+```text
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... yourpc
+```
+Copy everything including `ssh-ed25519`.
+
