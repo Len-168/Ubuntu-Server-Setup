@@ -28,7 +28,7 @@ You will have two files:
 
 # 2. Copy the SSH public key to Server
 
-## Method 1
+## Method 1 : The Automated One-Liner
 
 **1. If your local machine is Linux/macOS:**
 ```bash
@@ -43,8 +43,5 @@ type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh dev@[IP_ADDRESS] "mkdir -p ~/.ss
 ```
 Enter your Ubuntu password.
 
-**Optional: Test ssh-copy-id:**
-```bash
-ssh dev@[IP_ADDRESS]
-```
-You should now login without password.
+
+## Method 2 : The Manual Way
