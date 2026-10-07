@@ -3,7 +3,7 @@
 1.1. Switch to sudo user
     
 ```bash 
-# Switch to sudo user
+# Make sure you are Switch to sudo user
 su - your_username
 ```
 
