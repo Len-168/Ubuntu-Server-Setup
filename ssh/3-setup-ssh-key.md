@@ -1,4 +1,4 @@
-# 1. Generate an SSH key on your local computer
+# 1. Access from Local Machine to SSH Server with SSH Key (Access without password):
 On Windows PowerShell, Linux, or macOS:
 ```bash
 ssh-keygen -t ed25519
