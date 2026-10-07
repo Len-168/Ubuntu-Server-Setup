@@ -7,7 +7,26 @@ sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-1.2. Create a New Sudo User: Avoid using the root account for daily tasks.
+1.2. Time synchronization
+Normally you should synchronize time automatically, rather than manually setting the clock.
+Enable Ubuntu's time synchronization:
+```bash
+sudo timedatectl set-ntp true
+```
+Check status:
+```bash
+timedatectl
+```
+Typical output:
+```text
+Local time: Wed 2026-10-07 21:05:00 +07
+Universal time: Wed 2026-10-07 14:05:00 UTC
+Time zone: Asia/Phnom_Penh (+07, +0700)
+System clock synchronized: yes
+NTP service: active
+```
+
+1.3. Create a New Sudo User: Avoid using the root account for daily tasks.
 
 ```bash
 # Create a new user
@@ -18,29 +37,4 @@ sudo usermod -aG sudo your_username
 
 # (Optional) Check user has sudo or not:
 groups your_username # should return [your_username: your_username sudo]
-```
-
-```text
-
-Ubuntu-Server-Setup/
-│
-├── initialize-server/
-│   ├── 1-security-system-fundamentals.md
-│   ├── 2-hostname-timezone-time.md
-│   ├── 3-automatic-security-updates.md
-│   ├── 4-firewall.md
-│   ├── 5-system-verification.md
-│   └── 6-reboot-verification.md
-│
-├── ssh/
-│   ├── 1-bootstrap-ssh-access.md
-│   ├── 2-setup-ssh-key.md
-│   ├── 3-harden-sshd.md
-│   └── 4-test-ssh-access.md
-│
-├── docker/
-├── monitoring/
-├── backup/
-└── production-checklist.md
-
 ```
