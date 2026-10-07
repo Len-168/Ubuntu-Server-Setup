@@ -1,4 +1,4 @@
-# 1. Phase 1: Security & System Fundamentals
+# 1. Security & System Fundamentals
 
 1.1. Update and Upgrade: Ensure you have the latest security patches before continuing.
 
@@ -19,4 +19,3 @@ sudo usermod -aG sudo your_username
 # (Optional) Check user has sudo or not:
 groups your_username # should return [your_username: your_username sudo]
 ```
-1.3. Setup SSH Key-based Authentication:
