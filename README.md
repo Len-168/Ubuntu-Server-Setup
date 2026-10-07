@@ -1,3 +1,4 @@
+```text
 
 Ubuntu-Server-Setup/
 │
@@ -19,3 +20,5 @@ Ubuntu-Server-Setup/
 ├── monitoring/
 ├── backup/
 └── production-checklist.md
+
+```
