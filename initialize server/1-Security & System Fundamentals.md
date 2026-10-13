@@ -8,13 +8,14 @@ sudo apt autoremove -y
 ```
 
 1.2. Time synchronization
-Normally you should synchronize time automatically, rather than manually setting the clock.
-Enable Ubuntu's time synchronization:
+Set the correct time zone:
 ```bash
-sudo timedatectl set-ntp true
+sudo timedatectl set-timezone Asia/Phnom_Penh
 ```
 Check status:
 ```bash
+date
+# Or
 timedatectl
 ```
 Typical output:
