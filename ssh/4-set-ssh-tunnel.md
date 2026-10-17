@@ -23,7 +23,7 @@ echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudf
 1.3. Install cloudflared
 
 ```bash
-sudo apt install -y cloudflared
+sudo apt-get update && sudo apt-get install -y cloudflared
 ```
 
 1.4. Verify
